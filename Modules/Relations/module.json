@@ -1,15 +1,24 @@
 {
-    "name": "Relations",
-    "alias": "relations",
-    "description": "",
-    "keywords": [],
-    "active": 1,
-    "order": 0,
-    "providers": [
-        "Modules\\Relations\\Providers\\RelationsServiceProvider"
-    ],
-    "aliases":{},
-    "files": [
-        "start.php"
-    ]
+  "name": "Relations",
+  "alias": "relations",
+  "description": "",
+  "authors": [
+    {
+      "name": "xLink (Dan Aldridge)",
+      "email": "xLink@cybershade.org"
+    }
+  ],
+  "keywords": [
+    "relations-module"
+  ],
+  "version": "v1.0.0",
+  "active": 1,
+  "order": 0,
+  "providers": [
+    "Modules\\Relations\\Providers\\RelationsServiceProvider"
+  ],
+  "aliases": {},
+  "files": [
+    "start.php"
+  ]
 }

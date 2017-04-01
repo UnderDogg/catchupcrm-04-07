@@ -34,24 +34,25 @@ class Module implements Arrayable, Jsonable, JsonSerializable
         ];
 
         foreach (app('modules')->toCollection() as $module) {
+
             $directory = $module->getPath();
             $moduleName = $module->getName();
 
-            if (!File::exists($directory.'/module.json')) {
+            if (!File::exists($directory . '/module.json')) {
                 self::$modules->push(
                     array_merge($empty, ['name' => $moduleName, 'path' => $directory])
                 );
                 continue;
             }
-            $module = json_decode(file_get_contents($directory.'/module.json'));
+            $module = json_decode(file_get_contents($directory . '/module.json'));
 
             self::$modules->push([
-                'order' => (int) $module->order,
+                'order' => isset($module->order) ? (int)$module->order : 0,
                 'name' => $module->name,
                 'alias' => $module->alias,
-                'authors' => $module->authors,
+                'authors' => isset($module->authors) ? $module->authors : "",
                 'version' => $module->version,
-                'keywords' => (array) $module->keywords,
+                'keywords' => (array)$module->keywords,
                 'active' => $module->active == '1' ? true : false,
                 'path' => $directory,
             ]);
@@ -109,10 +110,12 @@ class Module implements Arrayable, Jsonable, JsonSerializable
     {
         return self::$modules->toArray();
     }
+
     public function toJson($options = 0)
     {
         return self::$modules->toJson($options);
     }
+
     public function jsonSerialize()
     {
         return self::$modules->jsonSerialize();

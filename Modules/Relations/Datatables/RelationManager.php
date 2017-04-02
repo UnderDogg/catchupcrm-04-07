@@ -61,7 +61,7 @@ class RelationManager
                 'relation_number' => [
                     'th' => 'Number',
                     'tr' => function ($model) {
-                        return array_get($model, 'company_name', null);
+                        return array_get($model, 'relation_key', null);
                     },
                     'orderable' => true,
                     'width' => '5%',
@@ -70,7 +70,7 @@ class RelationManager
                 'name' => [
                     'th' => 'Name',
                     'tr' => function ($model) {
-                        return array_get($model, 'company_name', null);
+                        return array_get($model, 'relation_name', null);
                     },
                     'orderable' => true,
                     'searchable' => true,
@@ -151,8 +151,8 @@ class RelationManager
 
                         //if (Lock::can('manage.read', 'auth_user')) {
                         $return[] = [
-                            'btn-title' => 'View User',
-                            'btn-link' => route('admin.user.view', $model->id),
+                            'btn-title' => 'View Relation',
+                            'btn-link' => route('admin.relation.view', $model->id),
                             'btn-class' => 'btn btn-default btn-xs btn-labeled',
                             'btn-icon' => 'fa fa-file-text-o',
                         ];
@@ -161,7 +161,7 @@ class RelationManager
                         //if (Lock::can('manage.update', 'auth_user')) {
                         $return[] = [
                             'btn-title' => 'Edit',
-                            'btn-link' => route('admin.user.edit', $model->id),
+                            'btn-link' => route('admin.relation.edit', $model->id),
                             'btn-class' => 'btn btn-warning btn-xs btn-labeled',
                             'btn-icon' => 'fa fa-pencil',
                         ];

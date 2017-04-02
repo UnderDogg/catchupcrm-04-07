@@ -49,7 +49,7 @@ class CreateLeadsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tblleads');
+        Schema::drop('leads');
     }
 
 }

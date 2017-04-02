@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>{!! Theme::get('title') !!}</title>
+    <title>CatchUp CRM</title>
     <meta charset="utf-8">
     <meta name="keywords" content="{!! Theme::get('keywords') !!}">
     <meta name="description" content="{!! Theme::get('description') !!}">

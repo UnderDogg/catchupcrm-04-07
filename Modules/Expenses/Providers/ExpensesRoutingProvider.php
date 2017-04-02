@@ -1,13 +1,13 @@
 <?php
 
-namespace Modules\Leads\Providers;
+namespace Modules\Expenses\Providers;
 
 use Modules\Core\Providers\CmsRoutingProvider;
 use Illuminate\Support\Facades\Route;
 
-class LeadsRoutingProvider extends CmsRoutingProvider
+class ExpensesRoutingProvider extends CmsRoutingProvider
 {
-    protected $namespace = 'Modules\Leads\Http\Controllers';
+    protected $namespace = 'Modules\Expenses\Http\Controllers';
 
     /**
      * @return string

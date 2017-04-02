@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Leads\Models;
+namespace Modules\Expenses\Models;
 
 use Modules\Core\Models\BaseModel;
 

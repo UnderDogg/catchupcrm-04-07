@@ -17,7 +17,7 @@ class ExpensesController extends BaseController
 
     public function manager()
     {
-        return $this->renderDataTable(with(new LeadManager())->boot());
+        return $this->renderDataTable(with(new ExpenseManager())->boot());
     }
 
     /**

@@ -7,40 +7,6 @@
   ],
   "license": "MIT",
   "type": "project",
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/cysha/installers"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/catchuptrycms/theme-default.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/catchuptrycms/theme-default-admin.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/catchuptrycms/theme-adminlte.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/catchuptrycms/theme-cysha.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/catchuptrycms/module-core.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/catchuptrycms/module-auth.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/catchuptrycms/module-admin.git"
-    }
-  ],
   "config": {
     "preferred-install": "dist",
     "sort-packages": true

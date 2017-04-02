@@ -20,7 +20,7 @@ return [
 
     // themes
     'themes' => [
-        'frontend' => 'default',
+        'frontend' => 'ninjafront',
         'backend' => 'default_admin',
     ],
 

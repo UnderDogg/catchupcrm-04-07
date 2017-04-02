@@ -64,7 +64,7 @@ class RelationManager
                         return array_get($model, 'relation_key', null);
                     },
                     'orderable' => true,
-                    'width' => '5%',
+                    'width' => '10%',
                 ],
 
                 'name' => [
@@ -74,7 +74,7 @@ class RelationManager
                     },
                     'orderable' => true,
                     'searchable' => true,
-                    'width' => '25%',
+                    'width' => '35%',
                 ],
 
                 /*'alias' => [

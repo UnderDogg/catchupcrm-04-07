@@ -22,7 +22,7 @@ class CreateRelationsTable extends Migration
             $table->integer('main_relation')->default(0);
 
             $table->boolean('is_active')->default(1);
-			       $table->string('website', 128)->default('');
+            $table->string('website', 128)->default('');
             $table->softDeletes();
             $table->timestamps();
         });

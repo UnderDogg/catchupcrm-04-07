@@ -70,9 +70,9 @@ class ExpenseManager
                 ],
 
                 'name' => [
-                    'th' => 'Name',
+                    'th' => 'Title',
                     'tr' => function ($model) {
-                        return array_get($model, 'expense_title', null);
+                        return array_get($model, 'title', null);
                     },
                     'orderable' => true,
                     'searchable' => true,

@@ -2,7 +2,19 @@
 
 return [
     'name' => 'default_admin',
-    'inherit' => 'default',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Inherit from another theme
+    |--------------------------------------------------------------------------
+    |
+    | Set up inherit from another if the file is not exists,
+    | this is work with "layouts", "partials", "views" and "widgets"
+    |
+    | [Notice] assets cannot inherit.
+    |
+    */
+    'inherit' => 'default', //default
 
     'events' => [
         'before' => function ($theme) {

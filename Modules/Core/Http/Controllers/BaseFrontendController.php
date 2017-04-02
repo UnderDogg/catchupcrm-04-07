@@ -2,6 +2,11 @@
 
 namespace Modules\Core\Http\Controllers;
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Request;
+
+
 class BaseFrontendController extends BaseController
 {
     /**
@@ -9,23 +14,116 @@ class BaseFrontendController extends BaseController
      *
      * @var string
      */
-    public $layout = '3-column';
+    public $layout = '1-column';
 
     public $sidebar = null;
 
+
+    /**
+     * The theme object.
+     *
+     * @var object
+     */
+    public $theme;
+
+    /**
+     * The theme to load.
+     *
+     * @var string
+     */
+    protected $themeName = null;
+
+
+
     public function boot()
     {
+        // reset the themeName to whatever is in the config
+        $this->setTheme(config('cms.core.app.themes.frontend', 'ninjafront'));
+
+
         // set the sidebar
         if ($this->sidebar === null) {
             $this->setSidebar('default');
         }
 
+
+        // then add the control panel stuff
+        $this->addPageAssets();
+
+
         parent::boot();
     }
+
 
     public function setSidebar($set = 'default')
     {
         $this->sidebar = $set;
         $this->theme->setSidebar($set);
     }
+
+
+    public function setActions(array $actions)
+    {
+        $this->actions = $actions;
+
+        $this->theme->setActions($actions);
+    }
+
+    /**
+     * Determines whether we have a file in the right place for this module.
+     */
+    public function addPageAssets()
+    {
+        if (!is_object(Route::current())) {
+            return;
+        }
+        $routeName = Route::current()->getName();
+
+        $path = sprintf('%s/themes/%s/css/%s.css', public_path(), $this->themeName, $routeName);
+
+        if (File::exists($path)) {
+            $this->theme->asset()->add($routeName, str_replace(public_path() . '/', '', $path), array('base'));
+        }
+        /*else
+        {
+            dd($path);
+        }*/
+    }
+
+    /**
+     * Will send a message back to the browser, if ajax will return as json.
+     *
+     * @param string $message
+     * @param int $status
+     * @param Request $input
+     *
+     * @return json|Redirect
+     */
+    protected function sendMessage($message, $status = 200)
+    {
+        if (Request::ajax()) {
+            return [
+                'status' => $status,
+                'message' => $message,
+            ];
+        }
+
+        return redirect()->back($status)->withInfo($message);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

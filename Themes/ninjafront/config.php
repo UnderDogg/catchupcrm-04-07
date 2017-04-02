@@ -2,6 +2,8 @@
 
 return array(
 
+    'name' => 'default_admin',
+
     /*
     |--------------------------------------------------------------------------
     | Inherit from another theme
@@ -13,7 +15,6 @@ return array(
     | [Notice] assets cannot inherit.
     |
     */
-
     'inherit' => 'default', //default
 
     /*
@@ -52,6 +53,13 @@ return array(
             // ');
         },
 
+        'asset' => function ($theme) {
+            $themeName = 'ninjafront';
+            //$theme->add('css', 'themes/'.$themeName.'/css/app.css');
+            $theme->add('js', 'themes/ninjafront/js/all.js');
+        },
+
+
         // Listen on event before render a theme,
         // this event should call to assign some assets,
         // breadcrumb template.
@@ -59,14 +67,49 @@ return array(
         {
             // You may use this event to set up your assets.
             // $theme->asset()->usePath()->add('core', 'core.js');
-            // $theme->asset()->add('jquery', 'vendor/jquery/jquery.min.js');
-            // $theme->asset()->add('jquery-ui', 'vendor/jqueryui/jquery-ui.min.js', array('jquery'));
+             $theme->asset()->add('jquery', 'vendor/jquery/jquery.min.js');
+             $theme->asset()->add('jquery-ui', 'vendor/jqueryui/jquery-ui.min.js', array('jquery'));
 
             // Partial composer.
-            // $theme->partialComposer('header', function($view)
-            // {
-            //     $view->with('auth', Auth::user());
-            // });
+             $theme->partialComposer('header', function($view)
+             {
+                 $view->with('auth', Auth::user());
+             });
+
+            $navService = (new \Modules\Core\Services\NavigationService());
+
+            // grab the navigations
+            $navService->boot();
+
+            // theme specific nav stuff
+            Menu::handler('backend_sidebar')->addClass('sidebar-menu');
+
+            Menu::handler('backend_sidebar')
+                ->getAllItemLists()
+                ->map(function ($itemList) {
+                    if ($itemList->getParent() !== null && $itemList->hasChildren()) {
+                        $itemList->getParent()->addClass('treeview');
+                        $itemList->addClass('treeview-menu');
+                    }
+                });
+
+            // add dropdown class to the li if the set has children
+            Menu::handler('backend_sidebar')
+                ->getItemsByContentType('Menu\Items\Contents\Link')
+                ->map(function ($item) {
+                    $itemValue = $item->getValue()->getValue();
+                    if ($item->hasChildren()) {
+                        $value = sprintf('<span>%s</span> <i class="fa fa-angle-left pull-right"></i>', $itemValue);
+                        $item->getValue()->setValue($value);
+                    } elseif ($item->getValue()->getUrl() === '#') {
+                        $item->addClass('header');
+                        $item->getValue()->setElement('span');
+                        $item->getParent()->setValue($itemValue);
+                    }
+                });
+
+
+
         },
 
         // Listen on event before render a layout,

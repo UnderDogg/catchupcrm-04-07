@@ -1,0 +1,16 @@
+{
+  "name": "Opportunities",
+  "alias": "opportunities",
+  "description": "",
+  "keywords": [],
+  "active": 1,
+  "order": 0,
+  "providers": [
+    "Modules\\Opportunities\\Providers\\OpportunitiesServiceProvider",
+    "Modules\\Opportunities\\Providers\\OpportunitiesRoutingProvider"
+  ],
+  "aliases": {},
+  "files": [
+    "start.php"
+  ]
+}

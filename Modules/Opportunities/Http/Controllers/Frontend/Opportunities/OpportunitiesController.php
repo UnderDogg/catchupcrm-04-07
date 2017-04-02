@@ -1,22 +1,22 @@
 <?php
 
-namespace Modules\Leads\Http\Controllers\Frontend\Leads;
+namespace Modules\Opportunities\Http\Controllers\Frontend\Opportunities;
 
-use Modules\Leads\Datatables\LeadManager;
+use Modules\Opportunities\Datatables\OpportunityManager;
 use Modules\Admin\Http\Controllers\Backend\BaseAdminController;
 use Modules\Admin\Traits\DataTableTrait;
-use Modules\Lead\Models\Lead;
+use Modules\Opportunities\Models\Opportunity;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
-class LeadsController extends BaseAdminController
+class OpportunitiesController extends BaseAdminController
 {
     use DataTableTrait;
 
     public function manager()
     {
-        return $this->renderDataTable(with(new LeadManager())->boot());
+        return $this->renderDataTable(with(new OpportunityManager())->boot());
     }
 
     /**
@@ -25,7 +25,7 @@ class LeadsController extends BaseAdminController
      */
     public function index()
     {
-        return view('leads::index');
+        return view('opportunities::index');
     }
 
     /**
@@ -34,7 +34,7 @@ class LeadsController extends BaseAdminController
      */
     public function create()
     {
-        return view('leads::create');
+        return view('opportunities::create');
     }
 
     /**
@@ -52,7 +52,7 @@ class LeadsController extends BaseAdminController
      */
     public function edit()
     {
-        return view('leads::edit');
+        return view('opportunities::edit');
     }
 
     /**

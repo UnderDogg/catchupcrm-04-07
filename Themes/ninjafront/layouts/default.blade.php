@@ -27,7 +27,16 @@
     <link href="./themes/ninjafront/css/icheck.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
     <link rel="icon" href="images/fav.ico" type="image/x-icon">
-
+    <style>
+        .navitem {
+            line-height: 23px;
+            margin-top: 12px;
+            padding-top: 5px;
+            font-weight: 500;
+            font-size: 16px;
+            color: #fff;
+        }
+    </style>
 
 </head>
 <body class="{{ $currentRoute or '' }}">
@@ -49,11 +58,11 @@
         <div class="navbar-left">
             <span class="dropdown-title">
                 <a href="javascript:showUpgradeModal()">texts.click_here</a> ||
-                <a href="">Relations</a> ||
-                <a href="">Projects</a> ||
-                <a href="">Trade</a> ||
-                <a href="">Invoices</a> ||
-                <a href="">Bookkeeping</a>
+                <a href="" class="navitem">Relations</a> ||
+                <a href="" class="navitem">Projects</a> ||
+                <a href="" class="navitem">Trade</a> ||
+                <a href="" class="navitem">Invoices</a> ||
+                <a href="" class="navitem">Bookkeeping</a>
             </span>
         </div>
         <div class="navbar-right">

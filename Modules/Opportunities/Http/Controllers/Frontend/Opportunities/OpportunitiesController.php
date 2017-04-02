@@ -3,6 +3,7 @@
 namespace Modules\Opportunities\Http\Controllers\Frontend\Opportunities;
 
 use Modules\Opportunities\Datatables\OpportunityManager;
+use Modules\Auth\Http\Controllers\Frontend\ControlPanel\BaseController;
 use Modules\Admin\Http\Controllers\Backend\BaseAdminController;
 use Modules\Admin\Traits\DataTableTrait;
 use Modules\Opportunities\Models\Opportunity;
@@ -10,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
-class OpportunitiesController extends BaseAdminController
+class OpportunitiesController extends BaseController
 {
     use DataTableTrait;
 

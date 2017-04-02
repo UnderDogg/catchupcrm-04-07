@@ -3,6 +3,7 @@
 namespace Modules\Leads\Http\Controllers\Frontend\Leads;
 
 use Modules\Leads\Datatables\LeadManager;
+use Modules\Auth\Http\Controllers\Frontend\ControlPanel\BaseController;
 use Modules\Admin\Http\Controllers\Backend\BaseAdminController;
 use Modules\Admin\Traits\DataTableTrait;
 use Modules\Lead\Models\Lead;
@@ -10,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
-class LeadsController extends BaseAdminController
+class LeadsController extends BaseController
 {
     use DataTableTrait;
 

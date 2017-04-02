@@ -44,9 +44,8 @@
 
 <header class="header">
     <nav class="navbar navbar-static-top" role="navigation">
-        <a href="#" class="logo">
-            <img src="./images/clients.png" alt="lcrm" class="img-responsive"
-                 style="margin:auto;width:100px;height:35px;">
+        <a href="/" class="logo">
+            <img src="./images/clients.png" alt="catchup crm" class="img-responsive" style="margin:auto;width:100px;height:35px;">
         </a>
 
         <div>
@@ -56,22 +55,24 @@
         </div>
 
         <div class="navbar-left">
-            <span class="dropdown-title">
-                <a href="javascript:showUpgradeModal()">texts.click_here</a> ||
+            <div class="dropdown-title">
+                <a href="javascript:showUpgradeModal()">Show a Modal</a> ||
                 <a href="" class="navitem">Relations</a> ||
                 <a href="" class="navitem">Projects</a> ||
                 <a href="" class="navitem">Trade</a> ||
                 <a href="" class="navitem">Invoices</a> ||
                 <a href="" class="navitem">Bookkeeping</a>
-            </span>
+            </div>
         </div>
         <div class="navbar-right">
-            <i class="fa fa-info" aria-hidden="true">Help</i>
+            <a href="/helptext">
+                <i class="fa fa-fw fa-bell-o black1"></i>
+            </a>
         </div>
         <div class="navbar-right">
             <ul class="nav navbar-nav">
                 <li class="dropdown messages-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i
+                    <a href="/inbox" class="dropdown-toggle" data-toggle="dropdown"> <i
                                 class="fa fa-fw fa-envelope-o black"></i>
 
                     </a>
@@ -79,27 +80,27 @@
                         <li class="dropdown-title">You have 0 new emails.</li>
 
 
-                        <li class="dropdown-footer"><a href="#mailbox#/m/inbox">View Messages</a></li>
+                        <li class="dropdown-footer"><a href="/inbox">View Messages</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown notifications-menu">
-                    <a href="##" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="/notifications" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-fw fa-bell-o black1"></i>
 
                     </a>
-                    <ul class="dropdown-menu dropdown-messages">
+                    <ul class="dropdown-menu dropdown-messages table-striped">
                         <li class="dropdown-title">You have 0 notifications</li>
 
 
                         <li class="dropdown-footer">
+                            <a href="/notifications">View Notifications</a>
                         </li>
                     </ul>
                 </li>
                 <li class="dropdown user user-menu">
-                    <a href="##" class="dropdown-toggle padding-user" data-toggle="dropdown">
-                        <img src="./images/hK0DqCD1Mm.jpg" alt="img" class="img-circle img-responsive pull-left"
-                             height="35" width="35">
+                    <a href="/profile" class="dropdown-toggle padding-user" data-toggle="dropdown">
+                        <img src="./images/hK0DqCD1Mm.jpg" alt="img" class="img-circle img-responsive pull-left" height="35" width="35">
                         <div class="riot">
                             <div>
                                 Admin Doe
@@ -117,7 +118,7 @@
                         </li>
                         <!-- Menu Body -->
                         <li class="pad-3">
-                            <a href="#profile">
+                            <a href="/profile">
                                 <i class="fa fa-fw fa-user"></i>
                                 My Profile
                             </a>
@@ -127,7 +128,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-right">
-                                <a href="#logout" class="text-danger">
+                                <a href="/logout" class="text-danger">
                                     <i class="fa fa-fw fa-sign-out"></i>
                                     Logout
                                 </a>
@@ -349,10 +350,7 @@
     </aside>
     <aside class="right-side right-padding">
         <div class="right-content">
-            <div class="container">
                 {!! Theme::content() !!}
-            </div>
-
             <!-- /.content -->
         </div>
     </aside>

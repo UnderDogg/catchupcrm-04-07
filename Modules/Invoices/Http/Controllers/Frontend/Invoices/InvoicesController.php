@@ -1,23 +1,23 @@
 <?php
 
-namespace Modules\Expenses\Http\Controllers\Frontend\Expenses;
+namespace Modules\Invoices\Http\Controllers\Frontend\Invoices;
 
-use Modules\Expenses\Datatables\ExpenseManager;
+use Modules\Invoices\Datatables\InvoiceManager;
 use Modules\Auth\Http\Controllers\Frontend\ControlPanel\BaseController;
 use Modules\Admin\Http\Controllers\Backend\BaseAdminController;
 use Modules\Admin\Traits\DataTableTrait;
-use Modules\Expenses\Models\Expense;
+use Modules\Invoices\Models\Invoice;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
-class ExpensesController extends BaseController
+class InvoicesController extends BaseController
 {
     use DataTableTrait;
 
     public function manager()
     {
-        return $this->renderDataTable(with(new ExpenseManager())->boot());
+        return $this->renderDataTable(with(new InvoiceManager())->boot());
     }
 
     /**
@@ -26,7 +26,7 @@ class ExpensesController extends BaseController
      */
     public function index()
     {
-        return view('expenses::index');
+        return view('invoices::index');
     }
 
     /**
@@ -35,7 +35,7 @@ class ExpensesController extends BaseController
      */
     public function create()
     {
-        return view('expenses::create');
+        return view('invoices::create');
     }
 
     /**
@@ -53,7 +53,7 @@ class ExpensesController extends BaseController
      */
     public function edit()
     {
-        return view('expenses::edit');
+        return view('invoices::edit');
     }
 
     /**

@@ -18,7 +18,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
     <link href="./themes/ninjafront/css/libs.css" rel="stylesheet" type="text/css">
-    <link href="./themes/ninjafront/css/secure.css" rel="stylesheet" type="text/css">
+    {{--<link href="./themes/ninjafront/css/secure.css" rel="stylesheet" type="text/css">--}}
     <link href="./themes/ninjafront/css/css/icheck.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="#img/fav.ico" type="image/x-icon">
     <link rel="icon" href="#img/fav.ico" type="image/x-icon">

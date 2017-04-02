@@ -5,7 +5,6 @@ use Illuminate\Database\Schema\Blueprint;
 
 class CreateExpensesTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -30,7 +29,6 @@ class CreateExpensesTable extends Migration
         });
     }
 
-
     /**
      * Reverse the migrations.
      *
@@ -38,7 +36,6 @@ class CreateExpensesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('expenses');
+        Schema::dropIfExists('expenses');
     }
-
 }

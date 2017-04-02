@@ -1,0 +1,16 @@
+{
+  "name": "Quotations",
+  "alias": "quotations",
+  "description": "",
+  "keywords": [],
+  "active": 1,
+  "order": 0,
+  "providers": [
+    "Modules\\Quotations\\Providers\\QuotationsServiceProvider",
+    "Modules\\Quotations\\Providers\\QuotationsRoutingProvider"
+  ],
+  "aliases": {},
+  "files": [
+    "start.php"
+  ]
+}

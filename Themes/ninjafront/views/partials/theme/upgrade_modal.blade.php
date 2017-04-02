@@ -3,8 +3,9 @@
     #upgrade-modal {
         display: none;
         position: absolute;
+        bottom:50px;
+        right:50px;
         z-index: 999999;
-
         background-color: #CDCDCD;
         text-align: center;
         width: 90%;
@@ -123,7 +124,7 @@
 
 <div id="upgrade-modal" class="container" style="">
     <div class="row">
-        <div class="col-md-10 text-right">
+        <div class="col-md-12 text-right">
             <a href="#"><i class="fa fa-close" onclick="hideUpgradeModal()" title="{{ trans('texts.close') }}"></i></a>
         </div>
     </div>

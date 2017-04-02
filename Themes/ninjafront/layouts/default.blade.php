@@ -25,8 +25,8 @@
     <link href="./themes/ninjafront/css/libs.css" rel="stylesheet" type="text/css">
     <link href="./themes/ninjafront/css/secure.css" rel="stylesheet" type="text/css">
     <link href="./themes/ninjafront/css/icheck.css" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
-    <link rel="icon" href="images/fav.ico" type="image/x-icon">
+    {{--<link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+    <link rel="icon" href="images/fav.ico" type="image/x-icon">--}}
     <style>
         .navitem {
             line-height: 23px;

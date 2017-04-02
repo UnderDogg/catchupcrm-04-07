@@ -67,8 +67,8 @@ return array(
         {
             // You may use this event to set up your assets.
             // $theme->asset()->usePath()->add('core', 'core.js');
-             $theme->asset()->add('jquery', 'vendor/jquery/jquery.min.js');
-             $theme->asset()->add('jquery-ui', 'vendor/jqueryui/jquery-ui.min.js', array('jquery'));
+             //$theme->asset()->add('jquery', 'vendor/jquery/jquery.min.js');
+             //$theme->asset()->add('jquery-ui', 'vendor/jqueryui/jquery-ui.min.js', array('jquery'));
 
             // Partial composer.
              $theme->partialComposer('header', function($view)

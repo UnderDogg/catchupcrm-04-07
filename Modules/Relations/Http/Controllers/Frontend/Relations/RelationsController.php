@@ -1,13 +1,25 @@
 <?php
 
-namespace Modules\Relations\Http\Controllers;
+namespace Modules\Relations\Http\Controllers\Frontend\Relations;
 
+use Modules\Relations\Datatables\RelationManager;
+use Modules\Admin\Http\Controllers\Backend\BaseAdminController;
+use Modules\Admin\Traits\DataTableTrait;
+use Modules\Relations\Models\Relation;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
-class RelationsController extends Controller
+class RelationsController extends BaseAdminController
 {
+    use DataTableTrait;
+
+    public function manager()
+    {
+        return $this->renderDataTable(with(new RelationManager())->boot());
+    }
+
+
     /**
      * Display a listing of the resource.
      * @return Response

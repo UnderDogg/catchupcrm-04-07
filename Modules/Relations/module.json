@@ -15,7 +15,8 @@
   "active": 1,
   "order": 0,
   "providers": [
-    "Modules\\Relations\\Providers\\RelationsServiceProvider"
+    "Modules\\Relations\\Providers\\RelationsServiceProvider",
+    "Modules\\Relations\\Providers\\RelationsRoutingProvider"
   ],
   "aliases": {},
   "files": [

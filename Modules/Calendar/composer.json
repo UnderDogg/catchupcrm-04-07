@@ -1,0 +1,15 @@
+{
+    "name": "cysha/calendar",
+    "description": "",
+    "authors": [
+        {
+            "name": "User",
+            "email": "user@cybershade.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Modules\\Calendar\\": ""
+        }
+    }
+}

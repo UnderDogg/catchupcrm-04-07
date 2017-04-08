@@ -3,7 +3,7 @@
     {!! Former::text('email', 'Email')->required() !!}
     {!! Former::password('password', 'Password')->required() !!}
 
-    <div class="form-group">
+    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
         <div class="col-md-9 col-md-offset-3">
             <div class="checkbox">
                 <label><input type="checkbox" name="remember"> Remember Me </label>

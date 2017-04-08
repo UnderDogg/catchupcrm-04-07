@@ -163,6 +163,7 @@ class TicketManager
                         //}
 
                         //if (Lock::can('manage.update', 'auth_user')) {
+                        //<td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
                         $return[] = [
                             'btn-title' => 'Edit',
                             'btn-link' => route('admin.ticket.edit', $model->id),

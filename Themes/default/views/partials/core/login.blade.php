@@ -5,7 +5,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <div class="panel-title">Please Sign In
+            <div class="panel-title">Please Signify In
                 <a href="{{ route('pxcms.user.register') }}" class="btn btn-default btn-sm pull-right">Register</a>
             </div>
         </div>

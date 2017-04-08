@@ -20,6 +20,7 @@ return [
 
     // themes
     'themes' => [
+        //'public' => 'public',
         'frontend' => 'ninjafront',
         'backend' => 'default_admin',
     ],

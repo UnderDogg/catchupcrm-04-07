@@ -15,6 +15,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        //\Modules\Core\Http\Middleware\SetTheme::class,
         \App\Http\Middleware\IsInstalledMiddleware::class,
         \App\Http\Middleware\InMaintenanceMiddleware::class,
     ];
@@ -50,12 +51,18 @@ class Kernel extends HttpKernel
     /**
      * The application's route middleware.
      *
+     * These middleware may be assigned to groups or used individually.
+     *
      * @var array
      */
     protected $routeMiddleware = [
         'auth' => \Modules\Auth\Http\Middleware\AuthMiddleware::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        //'role' => \Zizaco\Entrust\Middleware\EntrustRole::class,
+        //'permission' => \Zizaco\Entrust\Middleware\EntrustPermission::class,
+        //'hasPermission' => \Modules\Auth\Http\Middleware\HasPermissionMiddleware::class,
+        //'ability' => \Zizaco\Entrust\Middleware\EntrustAbility::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
